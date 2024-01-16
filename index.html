@@ -1,59 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Project</title>
-    <!-- Include Bootstrap CSS from CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- Your custom CSS styles (if needed) -->
-    <link rel="stylesheet" href="css/styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tailwind Project</title>
+	<!-- Include Tailwind CSS from CDN -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+	<!-- Your custom CSS styles (if needed) -->
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<style>
+		.card {
+			height: 250px;
+			background-color: rgba(0, 0, 0, 0.4);
+			color: white;
+			font-size: 40px;
+			margin: 10px;
+			flex: 200px 0 0;
+		}
+
+		.cards img {
+			width: 100%;
+			object-fit: cover;
+		}
+
+		.cards-wrapper {
+			display: flex;
+			transition: ease 0.5s;
+		}
+
+		.display-area {
+			width: 880px;
+			/*   border: 1px solid black; */
+			overflow-x: hidden;
+			margin: auto;
+		}
+
+		.dots-wrapper {
+			display: flex;
+			justify-content: center;
+			margin: auto;
+		}
+
+		.dot {
+			border: none;
+			background: rgba(0, 0, 0, 0.2);
+			width: 20px;
+			height: 20px;
+			margin: 5px;
+			border-radius: 50%;
+			outline: none;
+		}
+
+		.dot:hover {
+			background: rgba(0, 0, 0, 0.3);
+		}
+
+		.dot.active {
+			background: rgba(0, 0, 0, 0.5);
+		}
+	</style>
 </head>
-<body>
 
-    <!-- Bootstrap Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
-            Bootstrap Project
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<body class="">
+	<div class="min-h-screen flex relative bg-cover bg-center text-white"
+		style="background-image: url('images/banner.jpg');">
+		<!-- Overlay with opacity -->
+		<div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-    <!-- Jumbotron and Main Content -->
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="display-4">Welcome to Bootstrap Project</h1>
-            <p class="lead">A simple and powerful framework for building responsive websites.</p>
-        </div>
-    </div>
+		<div class="container mx-auto text-center mt-8 px-4 relative">
+			<div class="flex items-center justify-center ">
+				<img src="/images/pic1.jpg" alt="img1" class="w-28 h-38  md:w-40 md:h-55">
+			</div>
+			<p class="mb-6 text-xs md:mb-3 sm:mb-5">0100239279</p>
 
-    <div class="container mt-4">
-        <!-- Content as before -->
-    </div>
+			<h1 class="mb-12 text-3xl md:mb-10 md:text-6xl "><strong>Welcome to Nyakellong <br> Engineering (Pty)
+					LTD</strong></h1>
+			<p class="text-base sm:text-xl">Nyakellong Engineering is based in Randfontein and provides services in <br>
+				the Gauteng
+				Province Region and Nationwide.</p>
+		</div>
+	</div>
 
-    <!-- Include Bootstrap JS and jQuery from CDN -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <!-- Your JavaScript code -->
-    <script src="js/script.js"></script>
+	<div class="grid md:flex min-h-screen">
+
+		<!-- Left Column -->
+		<div class="flex-1 flex flex-col justify-center items-start bg-black text-white p-4 sm:p-8">
+
+			<div class="mb-6 sm:mb-12 p-2 sm:p-4">
+				<h5 class="text-xl sm:text-3xl mb-6 sm:mb-12">Nyakellong Engineering</h5>
+				<p class="mb-4 sm:mb-6">Strength, Courage, and Wisdom</p>
+				<p class="mb-2 sm:mb-4">Our 3 pillars at Nyakellong:</p>
+				<p class="mb-2 sm:mb-4">We take courage in providing quality job in everything we do.</p>
+				<p class="mb-2 sm:mb-4">Our strength is to carry any job given and complete it within a set time frame.
+				</p>
+				<p class="mb-2 sm:mb-4">Positive feedback from our previous and current clients builds us every day and
+					gives us
+					wisdom to improve our future.</p>
+			</div>
+			<div class="p-2 sm:p-4">
+				<h3 class="text-xl sm:text-3xl mb-6 sm:mb-12">Values and Vision</h3>
+				<p class="mb-4 sm:mb-6">Our Priority is to meet customer's satisfaction by providing high-quality
+					services and
+					completing the job on a set time frame</p>
+				<p class="mb-2 sm:mb-4">The main aim and vision of Nyakellong Engineering are to become a unique
+					Engineering
+					company in South Africa by providing clean Energy and maintenance services to the municipality and
+					community
+					and developing youth enthusiastic individuals that need training to acquire skills in the above
+					field</p>
+			</div>
+		</div>
+		<!-- Right Column -->
+		<div class="flex-1 overflow-hidden">
+			<img src="/images/pic2.jpg" alt="pic2" class="w-full h-full object-cover">
+		</div>
+	</div>
+
+	<div class="display-area m-4 overflow-y-hidden overflow-x-auto">
+		<h3 class="flex justify-center font-semibold p-4">Photo Gallery</h3>
+		<div class="cards-wrapper grid grid-cols-4 gap-4">
+	
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image1.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image2.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image3.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image4.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+	
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image5.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image6.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image7.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image8.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image1.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image2.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image3.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image4.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+	
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image5.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image6.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image7.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+			<div class="card aspect-w-1 aspect-h-1">
+				<img src="images/image8.jpg" alt="" class="object-cover w-full h-full">
+			</div>
+	
+	
+			<!-- Add more images following the same structure -->
+	
+		</div>
+	</div>
+	
+
+	<div class="dots-wrapper">
+		<button class="dot active"></button>
+		<button class="dot"></button>
+		<button class="dot"></button>
+		<button class="dot"></button>
+	</div>
+
+	<div class="flex flex-col min-h-screen bg-blue-300">
+		<div class="m-auto max-w-2xl p-8 text-center text-white">
+			<h4 class="text-2xl font-bold mb-6">Contact us today for excellent</h4>
+
+			<p class="text-xl mb-4 font-semibold">Services</p>
+
+			<p class="text-lg mb-6">Nyakellong Engineering provides various services such as Solar systems, 4G Smart
+				Cameras, Fabrication, general maintenances and refurbishment. We are innovative and experts in
+				designing, making Camera stands, carports with Solar panels, and making gates with gate motors according
+				to the client's requirements</p>
+
+			<p class="text-lg mb-6">Nyakellong Engineering, with our Trade Tested Electricians, we do Electrical
+				installation, wiring, fault finding, and tubing</p>
+
+			<p class="text-lg mb-6">We issue COC (Certificate Of Compliance) for every completed job</p>
+
+			<div class="mt-5">
+				<!-- WhatsApp Button -->
+				<a href="https://wa.me/27614545077" target="_blank">
+					<button
+						class="p-2 px-4 text-base bg-white text-black font-semibold rounded-md cursor-pointer rounded-3xl">
+						<i class="fa fa-whatsapp bg-green-500 rounded-md text-white" aria-hidden="true"></i>
+						Message us on WhatsApp
+					</button>
+				</a>
+			</div>
+		</div>
+
+		<div class="m-auto max-w-2xl p-8 text-white text-center bg-blue-300">
+			<p class="text-xl mb-6">Nyakellong Engineering</p>
+			<p>3864 SINDIWE MAGONA STREET WESTRAND, RANDFONTEIN, GAUTENG 1757</p>
+
+			<p class="mb-6">You can drop us an email or WhatsApp us if you need to inquire or need assistance and quote
+			</p>
+			<p class="mb-6">Email: nyakellongengineering@gmail.com</p>
+			<p class="mb-6">WhatsApp: 0614545077</p>
+			<p class="mb-4">Office: (010) 0239279</p>
+
+			<div>
+
+				<p style="font-weight: bold;">Hours</p>
+				<p>Mon: 07:30 - 17:00</p>
+				<p>Tue: 07:30 - 17:00</p>
+				<p>Wed: 07:30 - 17:00</p>
+				<p>Thu: 07:30 - 17:00</p>
+				<p>Fri: 07:30 - 17:00</p>
+				<p>Sat: 09:00 - 13:00</p>
+				<p>Sun: Closed</p>
+			</div>
+		</div>
+	</div>
+
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229120.3020958524!2d27.353918743079223!3d-26.196524726580765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95bdfe0b48feff%3A0xda6ed914e96a7472!2sRandfontein!5e0!3m2!1sen!2sza!4v1705334247971!5m2!1sen!2sza"
+		width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+	<!-- Your JavaScript code -->
+	<script src="js/script.js"></script>
+
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+		});
+	</script>
+
+	</div>
+
+
+
+	<div id="toggleContainer" class="fixed bottom-5 right-4 p-6 bg-gray-500 text-white rounded-full cursor-pointer">
+
+	</div>
+
+	<!-- <div id="contactForm" class="fixed bottom-20 right-6  bg-gray-500 text-white cursor-pointer" style="width: 300px;">
+	<div class=" bg-blue-300 p-4">
+
+		<h3>xxxx xxx</h3>
+	</div>
+    <form id="myForm" style="display: flex; flex-direction: column; gap: 10px;">
+        <label for="name" style="font-weight: bold;">Name:</label>
+        <input type="text" id="name" name="name" required style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+
+        <label for="email" style="font-weight: bold;">Email:</label>
+        <input type="email" id="email" name="email" required style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+
+        <label for="message" style="font-weight: bold;">How can we help:</label>
+        <textarea id="message" name="message" rows="4" required style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+
+        <button type="button" onclick="sendEmail()" style="padding: 8px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+    </form>
+</div> -->
+
+
+	<script>
+		function sendEmail() {
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			var message = document.getElementById("message").value;
+
+			var subject = "Contact Form Submission";
+			var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
+
+			// Replace 'YOUR_EMAIL_ADDRESS' with the actual email address to which you want to send emails.
+			var mailtoLink = "nyakellongengineering@gmail.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+			// Open the default email client with the pre-filled details.
+			window.location.href = mailtoLink;
+		}
+	</script>
+
+	<!-- Initialize Owl Carousel -->
+	<script>
+		// In HTML, .display-area has the width of 4 cards = 880px. Each card is 200px width and margin set to 10px.
+		// .display-area has a .cards-wrapper which contains all the cards. .cards-wrapper is set to display flex.
+		// .display-area has overflow hidden to hide the portion of cards-wrapper which extends beyond the container's width.
+
+		const wrapper = document.querySelector('.cards-wrapper');
+		// console.log(wrapper.clientWidth);
+
+		// grab the dots
+		const dots = document.querySelectorAll('.dot');
+		// the default active dot num which is array[0]
+		let activeDotNum = 0;
+
+		dots.forEach((dot, idx) => {
+			//   number each dot according to array index
+			dot.setAttribute('data-num', idx);
+
+			//   add a click event listener to each dot
+			dot.addEventListener('click', (e) => {
+
+				let clickedDotNum = e.target.dataset.num;
+				// console.log(clickedDotNum);
+				//     if the dot clicked is already active, then do nothing
+				if (clickedDotNum == activeDotNum) {
+					// console.log('active');
+					return;
+				}
+				else {
+					// console.log('not active');
+					// shift the wrapper
+					let displayArea = wrapper.parentElement.clientWidth;
+					// let pixels = -wrapper.clientWidth * clickedDotNum;
+					let pixels = -displayArea * clickedDotNum
+					wrapper.style.transform = 'translateX(' + pixels + 'px)';
+					//       remove the active class from the active dot
+					dots[activeDotNum].classList.remove('active');
+					//       add the active class to the clicked dot
+					dots[clickedDotNum].classList.add('active');
+					//       now set the active dot number to the clicked dot;
+					activeDotNum = clickedDotNum;
+				}
+
+			});
+		});
+	</script>
+
+
 
 </body>
+
 </html>
