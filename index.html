@@ -5,64 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tailwind Project</title>
-	<!-- Include Tailwind CSS from CDN -->
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-	<!-- Your custom CSS styles (if needed) -->
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-	<style>
-		.card {
-			height: 250px;
-			background-color: rgba(0, 0, 0, 0.4);
-			color: white;
-			font-size: 40px;
-			margin: 10px;
-			flex: 200px 0 0;
-		}
-
-		.cards img {
-			width: 100%;
-			object-fit: cover;
-		}
-
-		.cards-wrapper {
-			display: flex;
-			transition: ease 0.5s;
-		}
-
-		.display-area {
-			width: 880px;
-			/*   border: 1px solid black; */
-			overflow-x: hidden;
-			margin: auto;
-		}
-
-		.dots-wrapper {
-			display: flex;
-			justify-content: center;
-			margin: auto;
-		}
-
-		.dot {
-			border: none;
-			background: rgba(0, 0, 0, 0.2);
-			width: 20px;
-			height: 20px;
-			margin: 5px;
-			border-radius: 50%;
-			outline: none;
-		}
-
-		.dot:hover {
-			background: rgba(0, 0, 0, 0.3);
-		}
-
-		.dot.active {
-			background: rgba(0, 0, 0, 0.5);
-		}
-	</style>
 </head>
 
 <body class="">
@@ -124,7 +71,7 @@
 	<div class="display-area m-4 overflow-y-hidden overflow-x-auto">
 		<h3 class="flex justify-center font-semibold p-4">Photo Gallery</h3>
 		<div class="cards-wrapper grid grid-cols-4 gap-4">
-	
+
 			<div class="card aspect-w-1 aspect-h-1">
 				<img src="images/image1.jpg" alt="" class="object-cover w-full h-full">
 			</div>
@@ -137,7 +84,7 @@
 			<div class="card aspect-w-1 aspect-h-1">
 				<img src="images/image4.jpg" alt="" class="object-cover w-full h-full">
 			</div>
-	
+
 			<div class="card aspect-w-1 aspect-h-1">
 				<img src="images/image5.jpg" alt="" class="object-cover w-full h-full">
 			</div>
@@ -163,7 +110,7 @@
 			<div class="card aspect-w-1 aspect-h-1">
 				<img src="images/image4.jpg" alt="" class="object-cover w-full h-full">
 			</div>
-	
+
 			<div class="card aspect-w-1 aspect-h-1">
 				<img src="images/image5.jpg" alt="" class="object-cover w-full h-full">
 			</div>
@@ -176,13 +123,9 @@
 			<div class="card aspect-w-1 aspect-h-1">
 				<img src="images/image8.jpg" alt="" class="object-cover w-full h-full">
 			</div>
-	
-	
-			<!-- Add more images following the same structure -->
-	
+
 		</div>
 	</div>
-	
 
 	<div class="dots-wrapper">
 		<button class="dot active"></button>
@@ -248,23 +191,6 @@
 		width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
 		referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-	<!-- Your JavaScript code -->
-	<script src="js/script.js"></script>
-
-	<script>
-		var swiper = new Swiper('.swiper-container', {
-			slidesPerView: 1,
-			spaceBetween: 10,
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-		});
-	</script>
 
 	</div>
 
@@ -294,72 +220,9 @@
 </div> -->
 
 
-	<script>
-		function sendEmail() {
-			var name = document.getElementById("name").value;
-			var email = document.getElementById("email").value;
-			var message = document.getElementById("message").value;
-
-			var subject = "Contact Form Submission";
-			var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
-
-			// Replace 'YOUR_EMAIL_ADDRESS' with the actual email address to which you want to send emails.
-			var mailtoLink = "nyakellongengineering@gmail.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-			// Open the default email client with the pre-filled details.
-			window.location.href = mailtoLink;
-		}
-	</script>
-
-	<!-- Initialize Owl Carousel -->
-	<script>
-		// In HTML, .display-area has the width of 4 cards = 880px. Each card is 200px width and margin set to 10px.
-		// .display-area has a .cards-wrapper which contains all the cards. .cards-wrapper is set to display flex.
-		// .display-area has overflow hidden to hide the portion of cards-wrapper which extends beyond the container's width.
-
-		const wrapper = document.querySelector('.cards-wrapper');
-		// console.log(wrapper.clientWidth);
-
-		// grab the dots
-		const dots = document.querySelectorAll('.dot');
-		// the default active dot num which is array[0]
-		let activeDotNum = 0;
-
-		dots.forEach((dot, idx) => {
-			//   number each dot according to array index
-			dot.setAttribute('data-num', idx);
-
-			//   add a click event listener to each dot
-			dot.addEventListener('click', (e) => {
-
-				let clickedDotNum = e.target.dataset.num;
-				// console.log(clickedDotNum);
-				//     if the dot clicked is already active, then do nothing
-				if (clickedDotNum == activeDotNum) {
-					// console.log('active');
-					return;
-				}
-				else {
-					// console.log('not active');
-					// shift the wrapper
-					let displayArea = wrapper.parentElement.clientWidth;
-					// let pixels = -wrapper.clientWidth * clickedDotNum;
-					let pixels = -displayArea * clickedDotNum
-					wrapper.style.transform = 'translateX(' + pixels + 'px)';
-					//       remove the active class from the active dot
-					dots[activeDotNum].classList.remove('active');
-					//       add the active class to the clicked dot
-					dots[clickedDotNum].classList.add('active');
-					//       now set the active dot number to the clicked dot;
-					activeDotNum = clickedDotNum;
-				}
-
-			});
-		});
-	</script>
 
 
-
+	<script src="script.js"></script>
 </body>
 
 </html>
